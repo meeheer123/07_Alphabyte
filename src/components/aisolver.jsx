@@ -16,7 +16,7 @@ const AISolver = () => {
   const handleSolveError = async () => {
     setLoading(true); // Start loader
     try {
-      const response = await fetch('https://6f97-210-212-183-60.ngrok-free.app/analyze', {
+      const response = await fetch('https://ac08-210-212-183-60.ngrok-free.app/analyze', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const AISolver = () => {
           <button className="back-button" onClick={() => window.history.back()}>
             <ArrowLeft size={20} style={{ marginRight: '5px' }} /> Back
           </button>
-          <h1>AI Error Solver</h1>
+          <h1>AI Error classifier</h1>
           <button className="dark-mode-toggle" onClick={handleToggleDarkMode}>
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>

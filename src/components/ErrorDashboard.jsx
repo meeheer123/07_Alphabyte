@@ -81,7 +81,7 @@ export default function ErrorDashboard() {
           <button onClick={handleAISolver}>
             <span className="icon">🤖</span>
             <div>
-              <h3>AI Solver</h3>
+              <h3>AI Error Classifier</h3>
               <p>Use AI to solve errors</p>
             </div>
           </button>

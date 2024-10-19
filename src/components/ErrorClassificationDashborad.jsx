@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const fetchLogsFromAPI = async () => {
   try {
-    const response = await fetch('http://localhost:5000/logs');
+    const response = await fetch('http://localhost:5005/logs');
     if (!response.ok) throw new Error('Failed to fetch logs');
     const data = await response.json();
     return data;
