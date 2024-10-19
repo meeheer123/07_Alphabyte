@@ -29,11 +29,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    my_list = [1, 2, 3]
-    print(my_list[5])  # This will cause an IndexError
-    return "<p>Hello, World!</p>"
-
-
+    # Intentional error: TypeError by concatenating a string with an integer
+    my_string = "The number is: "
+    my_number = 5
+    result = my_string + my_number  # This will cause a TypeError
+    return f"<p>{result}</p>"
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
