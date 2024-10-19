@@ -11,7 +11,7 @@ sentry_sdk.init(
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
     before_send=lambda event, hint: send_error_to_api(event)  # Intercept the error before sending to Sentry
-) 
+)
 
 # Function to send error details to your API
 def send_error_to_api(event):
@@ -29,11 +29,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    # Intentional error: TypeError by concatenating a string with an integer
-    my_string = "The number is: "
-    my_number = 5
-    result = my_string + my_number  # This will cause a TypeError
-    return f"<p>{result}</p>"
+    my_list = [1, 2, 3]
+    
+    # Cause a division by zero error
+    division_result = 10 / 0  # This will raise a ZeroDivisionError
+    
+    print(my_list[5])  # This will still raise an IndexError, but won't be reached due to the division error
+
+    return "<p>Hello, World!</p>"
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
